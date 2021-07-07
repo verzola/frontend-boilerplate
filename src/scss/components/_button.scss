@@ -1,0 +1,20 @@
+.c-button {
+  background: #0984e3;
+  border-radius: 30px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.45;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  transition: background 150ms;
+
+  &:hover {
+    background: lighten(#0984e3, 5%);
+    color: #fff;
+    outline: 0;
+    text-decoration: none;
+  }
+}

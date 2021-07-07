@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  node:
+    image: node:16
+    command: sh -c 'npm install --legacy-peer-deps && npm run dev'
+    working_dir: /app
+    ports:
+      - 3000:3000
+      - 3001:3001
+      - 8080:8080
+    volumes:
+      - .:/app

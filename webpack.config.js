@@ -1,13 +1,14 @@
 // dependencies
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const WebpackAssetsManifest = require('webpack-assets-manifest')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 // import env vars
 require('dotenv').config()
@@ -64,6 +65,8 @@ module.exports = {
       filename: DEV || !VERSION_HASH ? '[name].css' : '[name].[hash].css',
       chunkFilename: DEV || !VERSION_HASH ? '[id].css' : '[id].[hash].css',
     }),
+    // lint scripts
+    new ESLintPlugin(),
     // lint styles
     new StyleLintPlugin({
       files: './src/scss/**/*.scss',
@@ -78,7 +81,7 @@ module.exports = {
     }),
     // generate assets manifest file
     new WebpackAssetsManifest(),
-    //
+    // html entrypoint
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),
@@ -100,12 +103,6 @@ module.exports = {
   ],
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-      },
       {
         test: /\.m?js$/,
         exclude: /(node_modules)/,

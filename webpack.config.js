@@ -143,11 +143,9 @@ module.exports = {
   },
   // dev server config
   devServer: {
-    contentBase: path.join(__dirname, 'src'),
     host: '0.0.0.0',
     hot: true,
     open: true,
-    overlay: true,
     port: 3000,
   },
 }

@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .c-button {
   background: #0984e3;
   border-radius: 30px;
@@ -12,7 +14,7 @@
   transition: background 150ms;
 
   &:hover {
-    background: lighten(#0984e3, 5%);
+    background: color.adjust(#0984e3, $lightness: 5%);
     color: #fff;
     outline: 0;
     text-decoration: none;

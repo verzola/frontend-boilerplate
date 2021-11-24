@@ -71,5 +71,8 @@
   },
   "publishConfig": {
     "access": "restricted"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
   }
 }

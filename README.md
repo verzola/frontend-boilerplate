@@ -1,4 +1,4 @@
-# frontend-boilerplate-v2
+# frontend-boilerplate
 
 [![Release](https://github.com/verzola/frontend-boilerplate/actions/workflows/release.yml/badge.svg)](https://github.com/verzola/frontend-boilerplate/actions/workflows/release.yml)
 

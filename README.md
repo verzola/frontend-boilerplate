@@ -1,5 +1,7 @@
 # frontend-boilerplate-v2
 
+[![Release](https://github.com/verzola/frontend-boilerplate/actions/workflows/release.yml/badge.svg)](https://github.com/verzola/frontend-boilerplate/actions/workflows/release.yml)
+
 Frontend boilerplate with batteries included for fast development.
 
 ## Features
